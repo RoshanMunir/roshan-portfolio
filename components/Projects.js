@@ -31,7 +31,10 @@ export default function Projects() {
       <div className="mt-10 grid grid-cols-1 gap-5 sm:mt-16 sm:gap-7 sm:grid-cols-2 lg:grid-cols-3">
         {PROJECTS.map((project, i) => (
           <Reveal key={project.title} delay={(i % 3) * 0.1}>
-            <div className="card group flex h-full flex-col overflow-hidden hover:-translate-y-2 hover:shadow-glow">
+            <div
+              data-cursor="hover"
+              className="card group flex h-full flex-col overflow-hidden hover:-translate-y-2 hover:shadow-glow"
+            >
               <div
                 className={`relative flex h-44 items-center justify-center overflow-hidden bg-gradient-to-br ${project.gradient}`}
               >
@@ -42,6 +45,7 @@ export default function Projects() {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
+                    data-cursor="hover"
                     className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-ink-900 transition-transform hover:scale-110"
                     aria-label={`GitHub repo of ${project.title}`}
                   >
@@ -71,6 +75,7 @@ export default function Projects() {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
+                    data-cursor="hover"
                     className="flex items-center gap-1.5 text-slate-600 dark:text-slate-400 transition-colors hover:text-ink-900 dark:hover:text-white"
                   >
                     View GitHub <Github className="h-3.5 w-3.5" />
